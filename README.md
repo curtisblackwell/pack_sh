@@ -1,6 +1,11 @@
 # pack.sh
 ## Usage
+From project root:
+
     sh pack.sh
+    
+### If installed as a [Git Submodule](http://git-scm.com/book/en/Git-Tools-Submodules)
+    sh pack_sh/pack.sh
 
 ## Requirements
 ### config.php
