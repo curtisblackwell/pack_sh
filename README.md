@@ -31,7 +31,7 @@ Inside `config.php`, a variable denoting the add-on version (`ADD_ON_V`) needs t
       add-on_dir (what devs will drop in to the CMS's add-ons dir)
         config.php
       LICENSE
-      pack.sh
+      pack.sh (or pack_sh if using as submodule)
       README.md
 
 #### Ex. (Hash Browns Add-On for ExpressionEngine and Statamic)
