@@ -4,7 +4,7 @@
 # ---
 
 # Assign working dir to a variable.
-if [[ $1 == "0" ]];
+if [[ $1 == "" ]];
   then
     ADD_ON_NAME=${PWD##*/}
   else
