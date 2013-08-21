@@ -11,6 +11,15 @@ if [[ $1 == "" ]];
     ADD_ON_NAME=$1
 fi
 
+INCLUDE=""
+
+for i in ${@:2};
+  do
+    INCLUDE="$INCLUDE $i";
+  done
+
+echo $INCLUDE
+
 # Assign the line containing the version number to a variable.
 ADD_ON_V=$(grep -a -e '[0-9]' $ADD_ON_NAME/config.php)
 
@@ -23,7 +32,7 @@ ADD_ON_V=$(sed -e "s/define.'ADD_ON_V', '//g;s/'.;//g" <<< $ADD_ON_V)
 FUTURE_ZIP=${ADD_ON_NAME}_${ADD_ON_V}
 mkdir $FUTURE_ZIP
 ### Copy the files.
-cp -R {$ADD_ON_NAME,LICENSE,README.md} $FUTURE_ZIP
+cp -R {$ADD_ON_NAME,LICENSE,README.md,$INCLUDE} $FUTURE_ZIP
 ### Zip that shit.
 zip -r $FUTURE_ZIP.zip $FUTURE_ZIP
 ### Delete FUTURE_ZIP
