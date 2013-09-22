@@ -32,7 +32,7 @@ ADD_ON_V=$(sed -e "s/define.'ADD_ON_V', '//g;s/'.;//g" <<< $ADD_ON_V)
 FUTURE_ZIP=${ADD_ON_NAME}_${ADD_ON_V}
 mkdir $FUTURE_ZIP
 ### Copy the files.
-cp -R {$ADD_ON_NAME,LICENSE,README.md,$INCLUDE} $FUTURE_ZIP
+cp -R {$ADD_ON_NAME,DOCS.md,LICENSE,README.md,$INCLUDE} $FUTURE_ZIP
 ### Zip that shit.
 zip -r $FUTURE_ZIP.zip $FUTURE_ZIP
 ### Delete FUTURE_ZIP
