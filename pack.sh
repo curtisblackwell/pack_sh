@@ -3,20 +3,26 @@
 # by Curtis Blackwell (curtisblackwell.com)
 # ---
 
-# Assign working dir to a variable.
-if [[ $1 == "" ]];
+# Pull in config file.
+if [ -f pack.sh.config ];
   then
-    ADD_ON_NAME=${PWD##*/}
+    source pack.sh.config
   else
-    ADD_ON_NAME=$1
+    # Assign working dir to a variable.
+    if [[ $1 == "" ]];
+      then
+        ADD_ON_NAME=${PWD##*/}
+      else
+        ADD_ON_NAME=$1
+    fi
+
+    INCLUDE=""
+
+    for i in ${@:2};
+      do
+        INCLUDE="$INCLUDE $i";
+      done
 fi
-
-INCLUDE=""
-
-for i in ${@:2};
-  do
-    INCLUDE="$INCLUDE $i";
-  done
 
 echo $INCLUDE
 
@@ -34,6 +40,6 @@ mkdir $FUTURE_ZIP
 ### Copy the files.
 cp -R {$ADD_ON_NAME,DOCS.md,LICENSE,README.md,$INCLUDE} $FUTURE_ZIP
 ### Zip that shit.
-zip -r $FUTURE_ZIP.zip $FUTURE_ZIP
+zip -r $ADD_ON_NAME.zip $FUTURE_ZIP
 ### Delete FUTURE_ZIP
 rm -r $FUTURE_ZIP

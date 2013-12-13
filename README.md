@@ -88,3 +88,23 @@ Inside `config.php`, a variable denoting the add-on version (`ADD_ON_V`) needs t
         demo
         LICENSE
         README.md
+
+## Config
+If you want to create a config file so that you can call the script without passing any arguments,
+
+1. copy `pack.sh.config.sample` to the dir where you call the script from,
+2. rename `pack.sh.config.sample` -> `pack.sh.config`, and
+3. update the variables in the file to the appropriate values.
+
+### Dir Structure
+    hash_browns
+      demo
+      hash_browns
+        config.php
+        pi.hash_browns.php
+      DOCS.md
+      LICENSE
+      pack_sh
+        pack.sh
+      pack.sh.config
+      README.md

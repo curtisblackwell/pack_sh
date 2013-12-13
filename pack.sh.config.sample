@@ -1,0 +1,7 @@
+#!/bin/bash
+# pack.sh.config (https://github.com/curtisblackwell/pack_sh)
+# by Curtis Blackwell (curtisblackwell.com)
+# ---
+
+ADD_ON_NAME="my_add_on"
+INCLUDE="demo _config"
